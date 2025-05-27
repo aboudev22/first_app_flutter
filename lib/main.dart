@@ -1,3 +1,4 @@
+import 'package:fisrt_app/widgets/container.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -8,35 +9,14 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    const title = 'Stateless Widget demo';
+    const title = 'Image Widget';
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: title,
       home: Scaffold(
-        appBar: AppBar(title: const SelectableText(title)),
-        body: const MyTextWidget(),
+        appBar: AppBar(title: const Text(title)),
+        body: MyContainerWidget(),
       ),
-    );
-  }
-}
-
-class MyTextWidget extends StatefulWidget {
-  const MyTextWidget({super.key});
-  @override
-  MyTextWidgetState createState() => MyTextWidgetState();
-}
-
-class MyTextWidgetState extends State<MyTextWidget> {
-  int count = 0;
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap:
-          () => {
-            setState(() {
-              count++;
-            }),
-          },
-      child: Center(child: Text("Click ici: $count")),
     );
   }
 }
